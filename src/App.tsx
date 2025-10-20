@@ -1,8 +1,7 @@
-import "./App.css";
-import TodoList from "./react-query/TodoList";
+import './App.css';
 
 function App() {
-  return <TodoList />;
+  return <h1>React Starter Project</h1>;
 }
 
 export default App;
