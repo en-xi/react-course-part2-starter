@@ -1,3 +1,4 @@
+import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 
 type Counter = {
@@ -13,5 +14,8 @@ const useCounter = create<Counter>((set) => ({
   increment: () => set((store) => ({ counter: store.counter + 1 })),
   reset: () => set(() => ({ max: 10 })),
 }));
+
+if (process.env.NODE_ENV === "development")
+  mountStoreDevtool("Counter Store", useCounter);
 
 export default useCounter;
